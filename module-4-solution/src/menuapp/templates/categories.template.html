@@ -1,0 +1,19 @@
+<ui-view></ui-view>
+<h2><u> List of Categories </u></h2>
+<div class="table-responsive">   
+    <table class="table table-bordered">
+        <thead>
+            <th>Category name</th>
+            <th>Instructions</th>
+            <th> Items </th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="category in $ctrl.categories">
+                <td>{{ category.name }}</td>
+                <td>{{ category.special_instructions}}</td>
+                <td><a ui-sref="categories.items({categoryName: category.short_name})">List of Items</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

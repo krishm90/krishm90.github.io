@@ -1,0 +1,17 @@
+<h2><u> List of Items in this category </u></h2>
+<div class="table-responsive">    
+    <table class="table table-bordered">
+        <thead>
+            <th>Item name</th>
+            <th>Description</th>
+            <th>Price Large</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in $ctrl.items">
+                <td>{{ item.name }}</td>
+                <td>{{ item.description}}</td>
+                <td>{{ item.price_large | currency:"$"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
