@@ -1,0 +1,36 @@
+<div class="container">
+    <fieldset style="color: white" ng-if="!myInfo.user_not_registered">
+        <legend>User Information</legend>
+        <span> First Name : {{myInfo.user.firstname}} </span>
+        <br>
+        <span> Last Name : {{ myInfo.user.lastname}} </span>
+        <br>
+        <span> Email : {{myInfo.user.email}} </span>
+        <br>
+        <span> Phone : {{myInfo.user.phone}} </span>
+        <br>
+        <span> Favourite Menu Item </span>
+        <br>
+        <div class="menu-item-tile col-md-6">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                        <div>{{myInfo.user.favourite_menu.short_name}}</div>
+                        <img class="img-responsive" width="250" height="150" ng-src="{{myInfo.user.favourite_menu.image_url}}" alt="{{myInfo.user.favourite_menu.name}}">
+                    </div>
+                    <div class="menu-item-price">{{myInfo.user.favourite_menu.price_small | currency}}<span> {{myInfo.user.favourite_menu.small_portion_name}}</span> {{myInfo.user.favourite_menu.price_large | currency}} <span>{{myInfo.user.favourite_menu.large_portion_name}}</span></div>
+                </div>
+                <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">{{myInfo.user.favourite_menu.name}}</h3>
+                    <p class="menu-item-details">{{myInfo.user.favourite_menu.description}}</p>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <span ng-if="myInfo.user_not_registered">
+    	Not Signed Up Yet. 
+    	<a ui-sref="public.signup" style="color : yellowgreen"> 
+    		<span class="glyphicon"></span> Sign Up Now !
+    	</a>
+    </span>
+</div>
